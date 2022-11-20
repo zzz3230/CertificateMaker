@@ -1,0 +1,66 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CertificateMaker.MainWindow"
+        Title="CertificateMaker"
+		xmlns:local="clr-namespace:CertificateMaker"
+		TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+		ExtendClientAreaToDecorationsHint="True"
+		>
+	
+		<Panel>
+			<ExperimentalAcrylicBorder IsHitTestVisible="False">
+				<ExperimentalAcrylicBorder.Material>
+					<ExperimentalAcrylicMaterial
+						BackgroundSource="Digger"
+						TintColor="Black"
+						TintOpacity="1"
+						MaterialOpacity="0.65" />
+				</ExperimentalAcrylicBorder.Material>
+			</ExperimentalAcrylicBorder>
+
+
+
+			<Canvas>
+				
+				<DockPanel>
+					<Menu DockPanel.Dock="Top">
+						<MenuItem Header="_File">
+							<MenuItem Header="_Open image" Click="OpenImage_Click"/>
+							<Separator/>
+							<MenuItem Header="_Import scheme"/>
+							<MenuItem Header="_Export scheme"/>
+						</MenuItem>
+						<MenuItem Header="_Edit">
+							<MenuItem Header="Add new text" Click="AddTextElement_Click"/>
+						</MenuItem>
+						<MenuItem Header="_Export">
+							<MenuItem Header="Apply by csv" Click="ExportByCsv_Click"/>
+						</MenuItem>
+					</Menu>
+				</DockPanel>
+				
+				<StackPanel x:Name="_propsPanel" Margin="40" Spacing="10">
+					<!--
+					<local:TextElementPropsControl x:Name="_testTextProps"></local:TextElementPropsControl>
+					-->
+					
+					
+				</StackPanel>
+
+				<StackPanel HorizontalAlignment="Right" x:Name="_previewPanel" Margin="40">
+					<local:PreviewControl x:Name="_testPreview"></local:PreviewControl>
+				</StackPanel>
+			</Canvas>
+		</Panel>
+
+
+		<!--<StackPanel Orientation="Horizontal"></StackPanel><StackPanel x:Name="_imagePanel"> HorizontalAlignment="Stretch"
+			<Canvas x:Name="_mainCanvas"></Canvas>
+		</StackPanel>-->
+	
+
+</Window>

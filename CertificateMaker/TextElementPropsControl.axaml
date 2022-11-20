@@ -1,0 +1,99 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:colorpicker="clr-namespace:AvaloniaColorPicker;assembly=AvaloniaColorPicker"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="CertificateMaker.TextElementPropsControl">
+	<Border
+						BorderBrush="Gray"
+						BorderThickness="2"
+						CornerRadius="6"
+						Padding="4">
+		<StackPanel Orientation="Horizontal" Spacing="30" Margin="10,0,0,0">
+		<TextBlock VerticalAlignment="Center">TEXT</TextBlock>
+		<StackPanel Spacing="20" VerticalAlignment="Center" Orientation="Horizontal">
+			<StackPanel Spacing="15">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>x</TextBlock>
+					<NumericUpDown 
+						x:Name="_xNum" 
+						Increment="0.10" 
+						ClipValueToMinMax="True" 
+						Minimum="0" 
+						Maximum="1"
+						AllowSpin="True"
+						FormatString="{}{0:#,0.00}"></NumericUpDown>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>y</TextBlock>
+					<NumericUpDown 
+						x:Name="_yNum" 
+						Increment="0.10" 
+						AllowSpin="True"
+						ClipValueToMinMax="True"
+						Minimum="0"
+						Maximum="1"
+						FormatString="{}{0:#,0.00}"
+						></NumericUpDown>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Spacing="15">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>id</TextBlock>
+					<TextBox x:Name="_idTextBox"></TextBox>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>def</TextBlock>
+					<TextBox x:Name="_defTextBox"></TextBox>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Spacing="15">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>font</TextBlock>
+					<ComboBox x:Name="_fontComboBox">
+						<ComboBoxItem IsSelected="True">Courier new</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Times</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Helvetica</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Gotham</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Bodoni</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>size</TextBlock>
+					<NumericUpDown x:Name="_sizeNum" Value="20" Increment="10"></NumericUpDown>
+				</StackPanel>
+			</StackPanel>
+			
+			<StackPanel Orientation="Vertical" Spacing="15">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>alignment</TextBlock>
+					<ComboBox x:Name="_alignmentComboBox">
+						<ComboBoxItem IsSelected="True">Left</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Center</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Right</ComboBoxItem>
+					</ComboBox>
+					
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>color</TextBlock>
+					<colorpicker:ColorButton x:Name="_colorPicker" Color="#56B4E9"></colorpicker:ColorButton>
+					<Button Content="✓" x:Name="_applyButton"></Button>
+				</StackPanel>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Spacing="15">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<TextBlock>style</TextBlock>
+					<ComboBox x:Name="_styleComboBox">
+						<ComboBoxItem IsSelected="True">Regular</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Bold</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Italic</ComboBoxItem>
+						<ComboBoxItem IsSelected="False">Bold+Italic</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+
+	</StackPanel>
+	</Border>
+</UserControl>
